@@ -1,7 +1,9 @@
-FROM node:22-alpine
+FROM node:24-trixie-slim
 
-RUN apk add --no-cache shadow bash curl
-RUN apk add --no-cache git fish openssh
+RUN apt update
+RUN apt install -y bash curl
+RUN apt install -y git fish openssh-client openssl
+RUN apt install -y python3
 
 RUN chsh -s /usr/bin/fish node
 
