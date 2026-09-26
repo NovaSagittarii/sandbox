@@ -1,4 +1,5 @@
-opencode.jsonc
+*.tar
+*.jsonc
 
 .vscode/
 node_modules/

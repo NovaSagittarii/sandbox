@@ -5,7 +5,7 @@
   "runServices": ["vscode"],
   "shutdownAction": "stopCompose",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "cp -r /workspace-data/. /workspace",
+  "postCreateCommand": "# cp -r /workspace-data/. /workspace",
   "customizations": {
     "vscode": {
       "extensions": [

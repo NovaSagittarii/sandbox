@@ -3,8 +3,9 @@ services:
     build: .
     image: devcontainer
     volumes:
-      # - ../:/workspace
-      - ../:/workspace-data:ro
+      - ../pv/.claude:/home/node/.claude
+      - ../pv/workspace:/workspace
+      # - ../:/workspace-data:ro
       # Docker socket to access Docker server
       # - /var/run/docker.sock:/var/run/docker.sock
       # SSH directory
@@ -15,7 +16,14 @@ services:
       # Shell history persistence
       # - ~/.zsh_history:/root/.zsh_history:z
       # Git config
-      # - ~/.gitconfig:/root/.gitconfig
+      # - ~/.gitconfig:/root/.
+      - ../pv/.ssh:/home/node/.ssh
+      - ../pv/.config/fish:/home/node/.config/fish
+    tmpfs:
+      - /home/node/.tmp/.claude:size=1g,mode=0700
+      - /home/node/.tmp/.claude-jobs:size=4g,mode=0700
+      - /tmp:size=16g,mode=1777
     environment:
       - TZ=
-    entrypoint: ["sh", "-c", "while sleep 1000; do :; done"]
+    # entrypoint: ["sh", "-c", "while sleep 1000; do :; done"]
+    command: ["sh", "-c", "while sleep 1000; do :; done"]
