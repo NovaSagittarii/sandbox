@@ -83,6 +83,7 @@ CLAUDE_TMPFS_PATHS=(
     shell-snapshots/
     tasks/
 )
+rm -rf ~/.claude/daemon*  # cleanup state if already around
 setup_tmpfs_links ~/.claude ~/.tmp/.claude "${CLAUDE_TMPFS_PATHS[@]}"
 setup_tmpfs_links ~/.claude ~/.tmp/.claude-jobs jobs/
 
