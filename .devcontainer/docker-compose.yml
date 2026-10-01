@@ -20,9 +20,9 @@ services:
       - ../pv/.ssh:/home/node/.ssh
       - ../pv/.config/fish:/home/node/.config/fish
     tmpfs:
-      - /home/node/.tmp/.claude:size=1g,mode=0700
-      - /home/node/.tmp/.claude-jobs:size=4g,mode=0700
-      - /tmp:size=16g,mode=1777
+      - /home/node/.tmp/.claude:size=1g,mode=0700,exec
+      - /home/node/.tmp/.claude-jobs:size=4g,mode=0700,exec
+      - /tmp:size=16g,mode=1777,exec
     environment:
       - TZ=
     # entrypoint: ["sh", "-c", "while sleep 1000; do :; done"]
