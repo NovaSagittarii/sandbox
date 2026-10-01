@@ -25,5 +25,6 @@ services:
       - /tmp:size=16g,mode=1777,exec
     environment:
       - TZ=
+      - PYTHONPYCACHEPREFIX=/tmp
     # entrypoint: ["sh", "-c", "while sleep 1000; do :; done"]
     command: ["sh", "-c", "while sleep 1000; do :; done"]
