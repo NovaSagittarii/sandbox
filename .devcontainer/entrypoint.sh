@@ -87,6 +87,8 @@ rm -rf ~/.claude/daemon*  # cleanup state if already around
 setup_tmpfs_links ~/.claude ~/.tmp/.claude "${CLAUDE_TMPFS_PATHS[@]}"
 setup_tmpfs_links ~/.claude ~/.tmp/.claude-jobs jobs/
 
+setup_tmpfs_links ~/.codex ~/.tmp/.codex logs_2.sqlite logs_2.sqlite-wal logs_2.sqlite-shm tmp/
+
 chown -R -h node:node /workspace
 chown -R -h node:node ~
 # chown -R node:node ~/.tmp

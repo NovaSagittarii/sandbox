@@ -3,6 +3,7 @@ services:
     build: .
     image: devcontainer
     volumes:
+      - ../pv/.codex:/home/node/.codex
       - ../pv/.claude:/home/node/.claude
       - ../pv/workspace:/workspace
       # - ../:/workspace-data:ro
@@ -20,6 +21,7 @@ services:
       - ../pv/.ssh:/home/node/.ssh
       - ../pv/.config/fish:/home/node/.config/fish
     tmpfs:
+      - /home/node/.tmp/.codex:size=8g,mode=0700,exec
       - /home/node/.tmp/.claude:size=1g,mode=0700,exec
       - /home/node/.tmp/.claude-jobs:size=4g,mode=0700,exec
       - /tmp:size=16g,mode=1777,exec

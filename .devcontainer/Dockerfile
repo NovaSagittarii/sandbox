@@ -6,7 +6,7 @@ RUN apt install -y git fish openssh-client openssl
 RUN apt install -y python3
 
 RUN chsh -s /usr/bin/fish node
-RUN npm install -g gsd-pi@latest
+# RUN npm install -g gsd-pi@latest
 
 WORKDIR /workspace
 
